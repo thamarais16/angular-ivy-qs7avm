@@ -14,7 +14,7 @@ import { shareReplay } from 'rxjs/operators';
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
   public product: Observable<Product[]>;
-
+  producte: Observable<Product[]>;
   constructor(
     @Inject(ProductService) private productService ,
   ){}
@@ -27,6 +27,8 @@ export class AppComponent  {
     })
 
     this.product.subscribe(data => {return data});
+
+    this.producte = (this.product).pipe(shareReplay());
   }
 
   trackByFn(index, item){

@@ -9,6 +9,7 @@ import { Logger } from './log';
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ AppComponent, HelloComponent ],
+  providers: [ Logger ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

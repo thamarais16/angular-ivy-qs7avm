@@ -1,4 +1,25 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div class="container col-12">
+  
+  <div class="table-responsive" *ngIf="(product | async) as products; else elB">
+    <table border="1" class="table">
+      <thead>
+        <tr>
+          <th>S.no</th>
+          <th>Name</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products; let i = index; let o = odd; trackBy: trackByFn">
+          <td>{{i+1}}</td>
+          <td>{{product.id}}</td>
+          <td>{{product.name}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <ng-template #elB>
+    <em>Please Wait the Data is processing</em>
+  </ng-template>
+</div>

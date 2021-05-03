@@ -1,4 +1,4 @@
-import { Component, VERSION, ChangeDetectionStrategy } from '@angular/core';
+import { Component, VERSION, ChangeDetectionStrategy, Inject } from '@angular/core';
 import { ProductService } from './product-service';
 import { Product } from './product';
 import { Observable, pipe } from 'rxjs';
@@ -16,7 +16,7 @@ export class AppComponent  {
   public product: Observable<Product[]>;
 
   constructor(
-    private productService: ProductService,
+    @Inject(ProductService) private productService ,
   ){}
 
   ngOnInit(){

@@ -10,8 +10,14 @@
 </div>
 
 <div class="container" >
-  <p *ngIf="name | async; else elB">{{name | async }}</p>
+  <p *ngIf="names | async; else elB">{{names | async }}</p>
   <ng-template #elB>
     <p>Loading Please Wait...</p>
   </ng-template>
+
+  <ol *ngIf= "nameList |  async as list;else elB">
+    <li *ngFor="let name of list">
+      {{name}}
+    </li>
+  </ol>
 </div>

@@ -20,6 +20,7 @@ export class PipesComponent implements OnInit {
   }
 
   public names: Observable<any> = new Observable(observer => {
+    console.log("obsss");
     setTimeout(() => {
       observer.next("We are processing please wait");
     }, 3000);

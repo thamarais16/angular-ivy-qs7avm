@@ -1,3 +1,4 @@
+import { KeyValue } from '@angular/common';
 import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { Observable, pipe } from 'rxjs';
@@ -48,12 +49,16 @@ export class PipesComponent implements OnInit {
 
   
   nameLis = new Promise(res => {
-      res("hi");
+      res({'c': 467, 'a':975, 'b': 8797});
     }).finally(()=>{
       return 0;
-    })
+    });
   
 
-
+  compareFn = (a: KeyValue<any, any>, b: KeyValue<any, any>) =>{
+    //return 0; default
+    //return a.value > b.value ? -1 : (a.value > b.value )? 0 : 1 descending
+    return a.value > b.value ? 1 : (a.value > b.value )? 0 : -1;
+  }
 
 }

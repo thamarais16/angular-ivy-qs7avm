@@ -9,7 +9,7 @@
  <p>{{dates | date:'M, MM, MMM, MMMM':'GMT':'en-GB'}}</p>
 </div>
 
-<div class="container" >
+<div class="container" style="display: none;" >
   <p *ngIf="names | async; else elB">{{names | async }}</p>
   <ng-template #elB>
     <p>Loading Please Wait...</p>
@@ -20,4 +20,18 @@
       {{name}}
     </li>
   </ol>
-</div>
+</div> 
+
+
+<div class="container" >
+  <p *ngIf="names | async; else elB">{{names | async }}</p>
+  <ng-template #elB>
+    <p>Loading Please Wait...</p>
+  </ng-template>
+
+  <ol *ngIf= "nameLis |  async as list;else elB">
+    <li *ngFor="let name of (list | keyvalue: compareFn)">
+      {{name.key}}--> {{name.value}}
+    </li>
+  </ol>
+</div> 

@@ -1,0 +1,17 @@
+<div class="container" style="display:none">
+  <p>{{'thamarai' | uppercase}}</p>
+  <p>{{'thamarai selvan' | titlecase | slice:9}}</p>
+  <p>{{'566' | number:'2.1-2'}}</p>
+  <p>{{'566' | percent:'2.1-2'}}</p>
+  <p>{{'566' | currency:'INR ':false}}</p>
+  <p>{{dates | date:'EEEE MMMM, d, y H:mm:ss  ZZZZ':'GMT':'en-GB'}}</p>
+ <p>{{dates | date:'E, EE, EEE, EEEE, EEEEE':'GMT':'en-GB'}}</p>
+ <p>{{dates | date:'M, MM, MMM, MMMM':'GMT':'en-GB'}}</p>
+</div>
+
+<div class="container" >
+  <p *ngIf="name | async; else elB">{{name | async }}</p>
+  <ng-template #elB>
+    <p>Loading Please Wait...</p>
+  </ng-template>
+</div>

@@ -20,5 +20,10 @@ export class CustomPipe implements PipeTransform {
       let temp = (value - 32)/1.8;
       return temp.toFixed(2);
     }
+
+    if(unit == 'D'){
+      let date = this._date.transform(value, 'EEEE, MMMM, dd, y, h:mm:ss a')
+      return date;
+    }
   }
 }

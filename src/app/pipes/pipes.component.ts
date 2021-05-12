@@ -10,10 +10,10 @@ import { shareReplay } from 'rxjs/operators';
   styleUrls: ['./pipes.component.css']
 })
 export class PipesComponent implements OnInit {
-  dates = new Date();
+  dates;
   fahrenheit;
   celsius;
-  
+
   constructor() { } 
 
   ngOnInit() {

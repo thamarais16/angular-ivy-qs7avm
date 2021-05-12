@@ -37,4 +37,11 @@
     <strong>Fahrenheit is {{celsius | myPipe:'F'}}</strong>
   </div>
 
+    <div class="form-group">
+    <label for="celsius">Select date</label>
+    <input name="celsius" type="date" class="form-control" [(ngModel)]="dates" #dat>
+    <br>
+    <strong>Selected date is {{dates | myPipe:'D'}}</strong>
+  </div>
+
 </div> 

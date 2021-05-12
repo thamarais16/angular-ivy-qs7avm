@@ -11,8 +11,9 @@ import { shareReplay } from 'rxjs/operators';
 })
 export class PipesComponent implements OnInit {
   dates = new Date();
-
-
+  fahrenheit;
+  celsius;
+  
   constructor() { } 
 
   ngOnInit() {

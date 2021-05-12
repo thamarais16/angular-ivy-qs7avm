@@ -23,15 +23,18 @@
 </div> 
 
 
-<div class="container" >
-  <p *ngIf="names | async; else elB">{{names | async }}</p>
-  <ng-template #elB>
-    <p>Loading Please Wait...</p>
-  </ng-template>
+<div class="container">
+  <div class="form-group">
+    <label for="fahrenheit">Fahrenheit to celsius</label>
+    <input name="fahrenheit" type="text" class="form-control" [(ngModel)]="fahrenheit" #fah>
+    <strong>celsius is {{fahrenheit | myPipe:'C'}}</strong>
+  </div>
 
-  <ol *ngIf= "nameLis |  async as list;else elB">
-    <li *ngFor="let name of (list | keyvalue: compareFn)">
-      {{name.key}}--> {{name.value}}
-    </li>
-  </ol>
+  <div class="form-group">
+    <label for="celsius">celsius to Fahrenheit</label>
+    <input name="celsius" type="text" class="form-control" [(ngModel)]="celsius" #cel>
+    <br>
+    <strong>Fahrenheit is {{celsius | myPipe:'F'}}</strong>
+  </div>
+
 </div> 

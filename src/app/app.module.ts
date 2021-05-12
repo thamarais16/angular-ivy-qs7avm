@@ -6,11 +6,22 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { Logger } from './log';
 import { PipesComponent } from './pipes/pipes.component';
+import { CustomPipe } from './pipes/custom-pipe';
+import { DatePipe, SlicePipe } from '@angular/common';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, PipesComponent ],
-  providers: [ Logger ],
+  declarations: [ 
+    AppComponent, 
+    HelloComponent, 
+    PipesComponent,
+    CustomPipe
+  ],
+  providers: [ 
+    Logger,
+    DatePipe,
+    SlicePipe
+  ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

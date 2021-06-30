@@ -8,6 +8,7 @@ import { Logger } from './log';
 import { PipesComponent } from './pipes/pipes.component';
 import { CustomPipe } from './pipes/custom-pipe';
 import { DatePipe, SlicePipe } from '@angular/common';
+import { ServeComponent } from './serve/serve.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
@@ -15,7 +16,8 @@ import { DatePipe, SlicePipe } from '@angular/common';
     AppComponent, 
     HelloComponent, 
     PipesComponent,
-    CustomPipe
+    CustomPipe,
+    ServeComponent
   ],
   providers: [ 
     Logger,
